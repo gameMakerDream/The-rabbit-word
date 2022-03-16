@@ -6,6 +6,8 @@ public class Main : MonoBehaviour
 {
     private void Start()
     {
-        new AppFacade(gameObject);
+        AppFacade.GetInstance(() => new AppFacade());
+        
     }
+
 }

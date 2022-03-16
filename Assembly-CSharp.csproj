@@ -56,35 +56,41 @@
     <Analyzer Include="C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\Extensions\Microsoft\Visual Studio Tools for Unity\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\PureMVC\Patterns\Observer\Notification.cs" />
-    <Compile Include="Assets\PureMVC\Interfaces\IController.cs" />
+    <Compile Include="Assets\Scripts\View\LoadingPanelMeditor.cs" />
+    <Compile Include="Assets\Scripts\LanguageManager.cs" />
+    <Compile Include="Assets\Scripts\Util.cs" />
+    <Compile Include="Assets\Scripts\Control\OpenPanelCommand.cs" />
     <Compile Include="Assets\Scripts\Control\StartUpCommand.cs" />
-    <Compile Include="Assets\PureMVC\Patterns\Proxy\Proxy.cs" />
-    <Compile Include="Assets\PureMVC\Interfaces\IView.cs" />
-    <Compile Include="Assets\Scripts\Image2.cs" />
-    <Compile Include="Assets\PureMVC\Patterns\Command\MacroCommand.cs" />
-    <Compile Include="Assets\PureMVC\Patterns\Facade\Facade.cs" />
-    <Compile Include="Assets\PureMVC\Core\Controller.cs" />
-    <Compile Include="Assets\PureMVC\Patterns\Observer\Notifier.cs" />
-    <Compile Include="Assets\PureMVC\Interfaces\INotifier.cs" />
-    <Compile Include="Assets\Scripts\Define.cs" />
-    <Compile Include="Assets\PureMVC\Patterns\Observer\Observer.cs" />
-    <Compile Include="Assets\PureMVC\Interfaces\IMediator.cs" />
-    <Compile Include="Assets\PureMVC\Interfaces\IModel.cs" />
-    <Compile Include="Assets\PureMVC\Patterns\Mediator\Mediator.cs" />
-    <Compile Include="Assets\Scripts\AppFacade.cs" />
-    <Compile Include="Assets\PureMVC\Core\View.cs" />
-    <Compile Include="Assets\Scripts\Main.cs" />
-    <Compile Include="Assets\PureMVC\Interfaces\INotification.cs" />
-    <Compile Include="Assets\PureMVC\Interfaces\ICommand.cs" />
-    <Compile Include="Assets\PureMVC\Interfaces\IProxy.cs" />
-    <Compile Include="Assets\PureMVC\Interfaces\IObserver.cs" />
-    <Compile Include="Assets\PureMVC\Interfaces\IFacade.cs" />
-    <Compile Include="Assets\PureMVC\Patterns\Command\SimpleCommand.cs" />
-    <Compile Include="Assets\PureMVC\Core\Model.cs" />
-    <Compile Include="Assets\Scripts\View\UIRootMeditor.cs" />
-    <Compile Include="Assets\Scripts\View\WordRootMeditor.cs" />
+    <Compile Include="Assets\Scripts\Proxy\PlayerPrefsDataProxy.cs" />
+    <Compile Include="Assets\Scripts\Proxy\MainPanelDataProxy.cs" />
+    <Compile Include="Assets\Scripts\Model\SettingPanelData.cs" />
+    <Compile Include="Assets\Scripts\ExtensionMethod.cs" />
     <Compile Include="Assets\Scripts\View\MainPanelMeditor.cs" />
+    <Compile Include="Assets\Scripts\Proxy\GamePanelDataProxy.cs" />
+    <Compile Include="Assets\Scripts\View\UIRootMeditor.cs" />
+    <Compile Include="Assets\Scripts\Interface\IMultiLanguage.cs" />
+    <Compile Include="Assets\Scripts\Define.cs" />
+    <Compile Include="Assets\Scripts\View\GamePanelMeditor.cs" />
+    <Compile Include="Assets\Scripts\Model\MainPanelData.cs" />
+    <Compile Include="Assets\Scripts\Proxy\SettingPanelDataProxy.cs" />
+    <Compile Include="Assets\Scripts\View\SettingPanelMeditor.cs" />
+    <Compile Include="Assets\Scripts\AppFacade.cs" />
+    <Compile Include="Assets\Scripts\Model\GamePanelData.cs" />
+    <Compile Include="Assets\Scripts\Main.cs" />
+    <Compile Include="Assets\Scripts\Control\StartGameCommand.cs" />
+    <Compile Include="Assets\Scripts\SoundManager.cs" />
+    <Compile Include="Assets\Scripts\Control\HidePanelCommand.cs" />
+    <Compile Include="Assets\Scripts\View\WordRootMeditor.cs" />
+    <Compile Include="Assets\Scripts\Model\PlayerPrefsData.cs" />
+    <Compile Include="Assets\Scripts\Interface\IUpdater.cs" />
+    <Compile Include="Assets\Scripts\MonoUtil.cs" />
+    <Compile Include="Assets\Scripts\View\RoomNodeMeditor.cs" />
+    <Compile Include="Assets\Scripts\Proxy\RoomNodeDataProxy.cs" />
+    <Compile Include="Assets\Scripts\Model\RoomNodeData.cs" />
+    <Compile Include="Assets\Scripts\Model\RoomData.cs" />
+    <Compile Include="Assets\Scripts\Model\RabbitData.cs" />
+    <Compile Include="Assets\Scripts\Control\AddRoomCommand.cs" />
+    <Compile Include="Assets\Scripts\View\AddRoomPanelMeditor.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
@@ -314,6 +320,9 @@
     </Reference>
     <Reference Include="UnityEditor.UnityConnectModule">
       <HintPath>D:\Program Files\UnityEditor\2020.3.29f1c1\Editor\Data\Managed\UnityEngine\UnityEditor.UnityConnectModule.dll</HintPath>
+    </Reference>
+    <Reference Include="LitJson">
+      <HintPath>Assets\Plugins\LitJson\LitJson.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.iOS.Extensions.Xcode">
       <HintPath>D:\Program Files\UnityEditor\2020.3.29f1c1\Editor\Data\PlaybackEngines\iOSSupport\UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
@@ -758,6 +767,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="Assembly-CSharp-firstpass.csproj">
+      <Project>{11F83211-792F-C435-7CD2-6DE9610B4B5A}</Project>
+      <Name>Assembly-CSharp-firstpass</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />

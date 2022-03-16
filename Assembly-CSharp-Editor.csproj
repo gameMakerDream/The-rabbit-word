@@ -54,6 +54,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Analyzer Include="C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\Extensions\Microsoft\Visual Studio Tools for Unity\Analyzers\Microsoft.Unity.Analyzers.dll" />
+    <Analyzer Include="E:\UnityProject\The rabbit word\The-rabbit-word\Assets\Plugins\LitJson\LitJson.dll" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Editor\Image2Editor.cs" />
@@ -313,6 +314,9 @@
     </Reference>
     <Reference Include="log4netPlastic">
       <HintPath>Library\PackageCache\com.unity.collab-proxy@1.15.12\Lib\Editor\PlasticSCM\log4netPlastic.dll</HintPath>
+    </Reference>
+    <Reference Include="LitJson">
+      <HintPath>Assets\Plugins\LitJson\LitJson.dll</HintPath>
     </Reference>
     <Reference Include="nunit.framework">
       <HintPath>Library\PackageCache\com.unity.ext.nunit@1.0.6\net35\unity-custom\nunit.framework.dll</HintPath>
@@ -769,6 +773,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="Assembly-CSharp-firstpass.csproj">
+      <Project>{11F83211-792F-C435-7CD2-6DE9610B4B5A}</Project>
+      <Name>Assembly-CSharp-firstpass</Name>
+    </ProjectReference>
     <ProjectReference Include="Assembly-CSharp.csproj">
       <Project>{98ADF400-E750-2156-CBC3-EC5F8D5A3A7B}</Project>
       <Name>Assembly-CSharp</Name>
