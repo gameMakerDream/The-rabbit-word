@@ -36,10 +36,9 @@ public class OpenPanelCommand : SimpleCommand
                 //
                 break;
             case PanelType.RoomNode:
-                Facade.RegisterCommand(Define.Cmd_AddRoom, () => new AddRoomCommand());
                 panel = root.transform.Find("WordRoot/RoomNode").gameObject;
                 Facade.RegisterMediator(new RoomNodeMeditor(panel));
-                Facade.RegisterProxy(new RoomNodeDataProxy(ppdProxy.VO.RND));
+                Facade.RegisterProxy(new RoomNodeDataProxy());
                 break;
             case PanelType.Room:
                 break;

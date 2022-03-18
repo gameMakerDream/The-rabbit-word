@@ -49,6 +49,6 @@ public class SoundManager : MonoBehaviour
         if (!ppdProxy.VO.SPD.SoundToggle)
             SetVolume(0);
         else
-            SetVolume(ppdProxy.VO.SPD.SoundVoloum);
+            SetVolume((float)ppdProxy.VO.SPD.SoundVoloum);
     }
 }

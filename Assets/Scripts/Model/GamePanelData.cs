@@ -6,7 +6,6 @@ public class GamePanelData
 {
     public int CarrotCount;
     public int StoneCount;
-
     public GamePanelData()
     {
         CarrotCount = 100;

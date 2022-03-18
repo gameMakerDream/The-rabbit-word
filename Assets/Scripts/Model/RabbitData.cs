@@ -4,15 +4,18 @@ using UnityEngine;
 
 public class RabbitData
 {
-    public float Strength;
-    public float Mood;
-    public string ID;
-    public Vector3 Position;
+    public double Strength;
+    public double Mood;
+    public string Id;
+    public string RoomId;
+    public RoomType WorkRoomType;
     public RabbitData()
     {
         Strength = 1;
         Mood = 1;
-        ID = string.Empty;
+        Id = string.Empty;
+        RoomId= string.Empty;
+        WorkRoomType = RoomType.None;
     }
 
 }
