@@ -5,11 +5,15 @@ using UnityTimer;
 
 public class RabbitView : MonoBehaviour
 {
-    private SpriteRenderer icon;
+    private SpriteRenderer Icon;
+    private Queue<RabbitOrder> OrderQueue;
+    private bool Executing;
     // Start is called before the first frame update
     public void Initialization()
     {
-        icon = GetComponent<SpriteRenderer>();
+        Icon = GetComponent<SpriteRenderer>();
+        OrderQueue = new Queue<RabbitOrder>();
+        Executing = false;
     }
 
 
@@ -18,40 +22,34 @@ public class RabbitView : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-    }
-
-
-    public void ExcuteBehavior(RabbitBehavior behavior)
-    {
-        string animationName = "Idle";
-        switch (behavior.BehaviorType)
+        if (OrderQueue.Count != 0&&!Executing)
         {
-            case BehaviorType.None:
-                break;
-            case BehaviorType.Idle:
-                Move2Target(behavior.Position, BehaviorType.Idle);
-                break;
-            case BehaviorType.Talk:
-                break;
-            case BehaviorType.Work:
-                Move2Target(behavior.Position, BehaviorType.Work);
-                break;
-            default:
-                break;
+            RabbitOrder order = OrderQueue.Dequeue();
+            Execute(order);
+            Executing = true;
         }
-
     }
-    private void Move2Target(Vector3 position,BehaviorType behaviorType)
+
+
+    public void AddOrder(RabbitOrder order)
     {
-        icon.flipX = transform.position.x < position.x;
+        OrderQueue.Enqueue(order);
+    }
+    private void Execute(RabbitOrder order)
+    {
+        
+    }
+    private void Move2Target(Vector3 position,OrderType orderType)
+    {
+        if (position == Vector3.zero) return;
+        Icon.flipX = transform.position.x < position.x;
         float distanceX = transform.position.x - position.x;
         float offset = 0;
         Timer.Register(Mathf.Abs(distanceX),
             () =>
             {
                 transform.position = position;
-                ChangeAnimation(behaviorType);
+                ChangeAnimation(orderType);
             },
             (x) =>
             {
@@ -64,17 +62,17 @@ public class RabbitView : MonoBehaviour
                 transform.position = newPos;
             });
     }
-    private void ChangeAnimation(BehaviorType behaviorType)
+    private void ChangeAnimation(OrderType behaviorType)
     {
         switch (behaviorType)
         {
-            case BehaviorType.None:
+            case OrderType.None:
                 break;
-            case BehaviorType.Idle:
+            case OrderType.Idle:
                 break;
-            case BehaviorType.Talk:
+            case OrderType.Talk:
                 break;
-            case BehaviorType.Work:
+            case OrderType.Work:
                 break;
             default:
                 break;

@@ -41,8 +41,8 @@ public class RabbitNodeMeditor : Mediator,IGeter<RabbitView>
                 AddRabbit(rabbitData);
                 break;
             case Define.Msg_RabbitBehavior:
-                RabbitBehavior rabbitBehavior = (RabbitBehavior)notification.Body;
-                GetItem(rabbitBehavior.RabbitData.Id).ExcuteBehavior(rabbitBehavior);
+                RabbitOrder rabbitBehavior = (RabbitOrder)notification.Body;
+                GetItem(rabbitBehavior.RabbitData.Id).AddOrder(rabbitBehavior);
                 break;
             default:
                 break;

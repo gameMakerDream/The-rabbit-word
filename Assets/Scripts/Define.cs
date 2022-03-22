@@ -40,7 +40,7 @@ public enum RabbitState
     Busy,
     Idle,
 }
-public enum BehaviorType
+public enum OrderType
 {
     None,
     Idle,

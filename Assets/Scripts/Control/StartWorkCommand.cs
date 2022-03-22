@@ -15,7 +15,7 @@ public class StartWorkCommand : SimpleCommand
         RoomData roomData = roomNodeDataProxy.GetItem(roomId);
         double[] xyz = roomNodeDataProxy.GetValidWorkPosition(roomId);
         Vector3 position = new Vector3((float)xyz[0], (float)xyz[1], (float)xyz[2]);
-        RabbitBehavior rabbitBehavior = new RabbitBehavior(rabbitId,position,BehaviorType.Work);
+        RabbitOrder rabbitBehavior = new RabbitOrder(rabbitId,position,OrderType.Work);
         SendNotification(Define.Msg_RabbitBehavior, rabbitBehavior);
 
     }
