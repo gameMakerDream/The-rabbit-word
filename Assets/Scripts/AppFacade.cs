@@ -6,13 +6,12 @@ using UnityEngine;
 public class AppFacade : Facade
 {
 
-
-    public AppFacade(GameObject root)
+    public AppFacade()
     {
         RegisterCommand(Define.Cmd_StartUp, () => new StartUpCommand());
+        SendNotification(Define.Cmd_StartUp);
+        RemoveCommand(Define.Cmd_StartUp);
     }
-
-  
 
 
 }

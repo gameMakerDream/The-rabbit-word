@@ -171,7 +171,7 @@ GameObject:
   - component: {fileID: 1911378677454675890}
   - component: {fileID: 1911378677454675901}
   m_Layer: 0
-  m_Name: btnSetting
+  m_Name: BtnSetting
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -291,8 +291,8 @@ GameObject:
   - component: {fileID: 1911378677850812706}
   - component: {fileID: 1911378677850812717}
   m_Layer: 0
-  m_Name: btnContinueGame
-  m_TagString: Untagged
+  m_Name: BtnContinue
+  m_TagString: "\u7EE7\u7EED"
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -412,8 +412,8 @@ GameObject:
   - component: {fileID: 1911378678337867215}
   - component: {fileID: 1911378678337867214}
   m_Layer: 0
-  m_Name: btnNewGame
-  m_TagString: Untagged
+  m_Name: BtnNewGame
+  m_TagString: "\u65B0\u6E38\u620F"
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
